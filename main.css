@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
+body {
+    background-color: black;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://animista.net/images/venezia-bw.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: fadeIn 2s forwards 2s ease-in-out, kenburns-bottom 2s forwards 2s ease-in-out;
+    z-index: -1;
+}
+
+#text-object {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+    color: white;
+    font-family: "Black Han Sans", sans-serif;
+    font-style: normal;
+    text-align: center;
+
+    text-shadow: 2px 2px 4px gray;
+
+    font-size: 5rem;
+    animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both, slide-out-fwd-center 1s forwards 1s ease-in-out;
+}
+
+@keyframes tracking-in-contract-bck {
+    0% {
+        letter-spacing: 1em;
+        -webkit-transform: translateZ(400px);
+        transform: translateZ(400px);
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out-fwd-center {
+    0% {
+        -webkit-transform: translateZ(1);
+        transform: translateZ(1);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: translateZ(600px);
+        transform: translateZ(600px);
+        opacity: 0;
+    }
+}
+
+@keyframes kenburns-bottom {
+    0% {
+        transform: scale(1) translateY(0);
+        transform-origin: 50% 84%;
+    }
+
+    100% {
+        transform: scale(1.25) translateY(15px);
+        transform-origin: bottom;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes kenburns-bottom {
+    0% {
+        transform: scale(1) translateY(0);
+        transform-origin: 50% 84%;
+    }
+
+    100% {
+        transform: scale(1.25) translateY(15px);
+        transform-origin: bottom;
+    }
+}
