@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Yellowtail&display=swap');
 
 body {
     background-color: black;
+    background-image: url("https://cdn.pixabay.com/photo/2017/02/12/12/42/wall-2059909_640.png");
+    background-size: cover;
 }
 
 body::before {
@@ -20,19 +22,22 @@ body::before {
 }
 
 #text-object {
+    font-family: "Yellowtail", cursive;
+    font-weight: 400;
+    font-style: normal;
+    height: 91vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 98vh;
-    color: white;
-    font-family: "Black Han Sans", sans-serif;
     font-style: normal;
     text-align: center;
-
-    text-shadow: 2px 2px 4px gray;
-
-    font-size: 5rem;
+    letter-spacing: 1.5rem;
+    font-size: 3rem;
     animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both, slide-out-fwd-center 1s forwards 1s ease-in-out;
+}
+
+h1 {
+    animation: pulsate 0.11s ease-in-out infinite alternate;     
 }
 
 @keyframes tracking-in-contract-bck {
@@ -95,5 +100,51 @@ body::before {
     100% {
         transform: scale(1.25) translateY(15px);
         transform-origin: bottom;
+    }
+}
+
+.neonText {
+    animation: flicker 1.5s infinite alternate;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #5271ff,
+        0 0 82px #5271ff,
+        0 0 92px #5271ff,
+        0 0 102px #5271ff,
+        0 0 151px #5271ff;
+}
+
+h1 {
+    font-size: 4.2rem;
+}
+
+@keyframes flicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        text-shadow:
+            0 0 4px #fff,
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px #5271ff,
+            0 0 80px #5271ff,
+            0 0 90px #5271ff,
+            0 0 100px #5271ff,
+            0 0 150px #5271ff;
+
+    }
+
+    20%,
+    24%,
+    55% {
+        text-shadow: none;
     }
 }
